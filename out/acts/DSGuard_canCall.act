@@ -1,0 +1,6 @@
+behaviour canCall of DSGuard
+interface canCall(address src, address dst, bytes4 sig)
+
+
+
+returns 1

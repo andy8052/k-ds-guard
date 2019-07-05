@@ -9,7 +9,7 @@
     ]
   },
   "implementations": {
-    "Weth": {
+    "DSGuard": {
       "solc_output": "ds-guard/out/guard.sol.json"
     }
   },
