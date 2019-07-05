@@ -494,7 +494,7 @@ rule #if C #then G -Int X #else G -Int Y #fi => G -Int (#if C #then X #else Y #f
 // src/storage.k.md
 
 syntax Int ::= "#DSGuard.acl" "[" Int "]" "[" Int "]" "[" Int "]" [function]
-rule #DSGuard.acl[A][B][C] => #hashedLocation("Solidity", 3, A B C)
+rule #DSGuard.acl[A][B][C] => #hashedLocation("Solidity", 2, A B C)
 
 syntax Int ::= "#DSGuard.owner" [function]
 rule #DSGuard.owner => 1

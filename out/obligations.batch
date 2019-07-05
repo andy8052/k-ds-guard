@@ -1,3 +1,5 @@
 DSGuard_canCall_pass_rough
-DSGuard_permit-auth_fail_rough
+DSGuard_owner_fail_rough
+DSGuard_permit-address-owner_fail_rough
+DSGuard_owner_pass_rough
 DSGuard__exhaustiveness
