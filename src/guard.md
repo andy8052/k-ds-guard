@@ -32,6 +32,44 @@ iff
 returns Authority
 ```
 
+```act
+behaviour setOwner of DSGuard
+interface setOwner(address usr)
+
+types
+  Owner : address
+  Authority : address
+
+storage
+  owner |-> CALLER_ID => usr
+  authority |-> Authority
+
+iff
+  VCallValue == 0
+  (CALLER_ID == Owner) or (CALLER_ID == ACCT_ID)
+
+if
+  (CALLER_ID == Owner) or (CALLER_ID == ACCT_ID) or (Authority == 0)
+```
+
+```act
+behaviour setAuthority of DSGuard
+interface setAuthority(address usr)
+
+types
+  Owner : address
+  Authority : address
+
+storage
+  authority |-> 0 => usr
+
+iff
+  VCallValue == 0
+
+if
+  CALLER_ID == Owner
+  ACCT_ID =/= CALLER_ID
+```
 
 ```act
 behaviour canCall of DSGuard
@@ -51,8 +89,8 @@ types
   Owner     : address
   Authority : address
 storage
-  acl[src][dst][sig] |-> Approval => true  
-  owner |-> Owner	
+  acl[src][dst][sig] |-> Approval => true
+  owner |-> Owner
 
 iff
   VCallValue == 0
@@ -72,9 +110,9 @@ types
   Authority : address
 
 storage
-  acl[src][dst][sig] |-> Approval => true  
+  acl[src][dst][sig] |-> Approval => true
   owner |-> Owner
-  authority |-> Authority	
+  authority |-> Authority
 
 iff
   VCallValue == 0
