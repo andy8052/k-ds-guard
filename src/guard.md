@@ -17,6 +17,23 @@ returns Owner
 ```
 
 ```act
+behaviour authority of DSGuard
+interface authority()
+
+types
+  Authority : address
+
+storage
+  authority |-> Authority
+
+iff
+  VCallValue == 0
+
+returns Authority
+```
+
+
+```act
 behaviour canCall of DSGuard
 interface canCall(address src, address dst, bytes4 sig)
 
