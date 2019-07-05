@@ -1,8 +1,0 @@
-requires "data.k"
-
-module 9df42441d2b7837c8978fea74f8f6841525b0cd0f1bf540043d23c8035e47046GAS
-  imports EVM-DATA
-
-
-
-endmodule
